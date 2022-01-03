@@ -1,6 +1,6 @@
 # 1. Hash
 
-## The word hash actually has **culinary roots**. It means to **chop and mix** and that perfectly describes what a hashing function does. It takes an input value of any length and outputs a fixed length value. Hashing algorithms, like SHA (Secure Hashing Algorithm), produce a random, unique, fixed-length string from a given input. They are often used to compare two values, like passwords, for equality.
+## The word hash actually has [culinary roots](https://softwareengineering.stackexchange.com/questions/108124/why-it-is-called-hash-table-or-hash-function-hash-doesnt-make-any-sense-t). It means to **chop and mix** and that perfectly describes what a hashing function does. It takes an input value of any length and outputs a fixed length value. Hashing algorithms, like SHA (Secure Hashing Algorithm), produce a random, unique, fixed-length string from a given input. They are often used to compare two values, like passwords, for equality.
 
 - The same input will always produce the same output.
 - Fast to compute, but computationally expensive to find the original input
@@ -38,14 +38,14 @@ console.log(match ? "✔️  good password" : "❌  password does not match");
 
 ## Hashes are great for making passwords unreadable, but because they always produce the same output, they are not very secure. A salt is a random string that is added to the input before hashing. This makes the hash more unique and harder to guess.
 
-## Users often to use weak passwords, like “password123”. When a database is compromised, the attacker can easily find the value of an unsalted hash by searching precomputed **rainbow table** of common hashes - salting fixes this.
+## Users often to use weak passwords, like “password123”. When a database is compromised, the attacker can easily find the value of an unsalted hash by searching precomputed [rainbow table](https://en.wikipedia.org/wiki/Rainbow_table) of common hashes - salting fixes this.
 
 - Used to make a hash harder to guess
 - Appends a random string to the input before hashing
 
 ## **Password Salt with Scrypt in Node.js**
 
-### Below is an example of a password salt using the **scrypt** algorithm in Node crypto.
+### Below is an example of a password salt using the [scrypt](https://en.wikipedia.org/wiki/Scrypt) algorithm in Node crypto.
 
 ```js
 const { scryptSync, randomBytes, timingSafeEqual } = require("crypto");
@@ -147,7 +147,7 @@ console.log(`Deciphered: ${decryptedMessage.toString("utf-8")}`);
 
 # 5. Keypairs
 
-## Using a shared key works for encryption works, but the problem is that both parties must agree upon the key. This is problematic in the real world because it’s not practical or secure to share across a network. The solution is to use an algoritm like RSA that generates a keypair containing a public and private key. As their names indicate, the private key should be kept secret, while the public key can be shared freely.
+## Using a shared key works for encryption works, but the problem is that both parties must agree upon the key. This is problematic in the real world because it’s not practical or secure to share across a network. The solution is to use an algoritm like [RSA](<https://en.wikipedia.org/wiki/RSA_(cryptosystem)>) that generates a keypair containing a public and private key. As their names indicate, the private key should be kept secret, while the public key can be shared freely.
 
 ## **Generate an RSA Keypair in Node.js**
 
